@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧮 Умный Решатель Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧮 Умный Решатель Online</h1>
+            <p class="subtitle">Решает задачи из любой точки Вселенной! 🌍🚀</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="math">🧮 Математика</button>
+            <button class="tab-btn" data-tab="physics">⚡ Физика</button>
+            <button class="tab-btn" data-tab="geometry">📐 Геометрия</button>
+            <button class="tab-btn" data-tab="info">💻 Информатика</button>
+        </div>
+
+        <!-- Математика -->
+        <div id="math" class="tab-content active">
+            <div class="calculator-card">
+                <h3>🧮 Калькулятор выражений</h3>
+                <input type="text" id="mathInput" placeholder="(2+3)*4, 2**3, √16, 5²">
+                <button onclick="calculateMath()" class="calc-btn">Вычислить</button>
+                
+                <div class="examples">
+                    <strong>Примеры:</strong>
+                    <button class="example-btn" onclick="setExample('(2+3)*4')">(2+3)×4</button>
+                    <button class="example-btn" onclick="setExample('2**3 + 5')">2³ + 5</button>
+                    <button class="example-btn" onclick="setExample('Math.sqrt(16)')">√16</button>
+                </div>
+                
+                <div class="result" id="mathResult">
+                    Результат появится здесь...
+                </div>
+            </div>
+        </div>
+
+        <!-- Физика -->
+        <div id="physics" class="tab-content">
+            <div class="calculator-card">
+                <h3>⚡ Физические расчеты</h3>
+                
+                <select id="physicsFormula" onchange="showPhysicsFields()">
+                    <option value="">Выберите формулу</option>
+                    <option value="kinetic">Кинетическая энергия: E = ½mv²</option>
+                    <option value="potential">Потенциальная энергия: E = mgh</option>
+                    <option value="velocity">Скорость: v = s/t</option>
+                    <option value="force">Сила: F = ma</option>
+                </select>
+
+                <div id="physicsFields"></div>
+                <button onclick="calculatePhysics()" class="calc-btn">Рассчитать</button>
+                
+                <div class="result" id="physicsResult"></div>
+            </div>
+        </div>
+
+        <!-- Геометрия -->
+        <div id="geometry" class="tab-content">
+            <div class="calculator-card">
+                <h3>📐 Геометрические расчеты</h3>
+                
+                <select id="geometryShape" onchange="showGeometryFields()">
+                    <option value="">Выберите фигуру</option>
+                    <option value="triangle">Треугольник</option>
+                    <option value="rectangle">Прямоугольник</option>
+                    <option value="circle">Круг</option>
+                    <option value="sphere">Сфера</option>
+                </select>
+
+                <div id="geometryFields"></div>
+                <button onclick="calculateGeometry()" class="calc-btn">Рассчитать</button>
+                
+                <div class="result" id="geometryResult"></div>
+            </div>
+        </div>
+
+        <!-- Информатика -->
+        <div id="info" class="tab-content">
+            <div class="calculator-card">
+                <h3>💻 Информатика</h3>
+                
+                <select id="computerTopic" onchange="showComputerFields()">
+                    <option value="">Выберите тему</option>
+                    <option value="binary">Перевод в двоичную систему</option>
+                    <option value="hex">Перевод в шестнадцатеричную</option>
+                    <option value="logic">Логические операции</option>
+                </select>
+
+                <div id="computerFields"></div>
+                <button onclick="calculateComputer()" class="calc-btn">Вычислить</button>
+                
+                <div class="result" id="computerResult"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>🔗 <strong>Доступно с любой планеты!</strong></p>
+            <p class="github-link">
+                📍 Размещено на GitHub Pages • 
+                <a href="https://github.com/yourusername/smart-solver-online" target="_blank">Исходный код</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
